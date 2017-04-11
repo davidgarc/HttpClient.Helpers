@@ -32,7 +32,8 @@ build_script:
   - cmd: dotnet build 
 
 test_script:
-  - cmd dotnet test tests\HttpClient.Helpers.Tests\HttpClient.Helpers.Tests.csproj
+  - cmd: dotnet test tests\%project_name%.Tests\%project_name%.Tests.csproj
+  - cmd: dotnet test tests\HttpClient.Helpers.Tests\HttpClient.Helpers.Tests.csproj
 
 cache:
   - packages -> **\packages.config
