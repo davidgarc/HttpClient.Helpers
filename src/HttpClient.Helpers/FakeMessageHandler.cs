@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace WorldDomination.Net.Http
 {
@@ -163,7 +164,9 @@ namespace WorldDomination.Net.Http
             }
 
             var type = typeof(HttpMessageOptions);
-            var propertyInfo = type.GetProperty("NumberOfTimesCalled");
+            var propertyInfo = type.GetTypeInfo()
+                                   ?.GetDeclaredProperty("NumberOfTimesCalled");
+            //var propertyInfo = type.GetProperty("NumberOfTimesCalled");
             if (propertyInfo == null)
             {
                 return;
