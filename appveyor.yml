@@ -32,7 +32,7 @@ build_script:
   - cmd: dotnet build 
 
 test_script:
-  - cmd dotnet test %project_name%\tests\%project_name%.Tests\%project_name%.Tests.csproj
+  - cmd dotnet test tests\%project_name%.Tests\%project_name%.Tests.csproj
 
 cache:
   - packages -> **\packages.config
